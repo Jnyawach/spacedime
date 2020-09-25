@@ -1,0 +1,82 @@
+/*#####################HOMEPAGE#########*/
+.portfolio p{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-weight: bold;
+    color:white ;
+}
+.get-in{
+    background-color: #8EB672;
+    color: white;
+}
+.get-in hr{
+    background-color: white;
+    width: 6%;
+
+}
+/*######################CONTACT############*/
+.cont {
+    position: absolute;
+    top: 60% !important;
+}
+.cont h1{
+    font-size: 50px;
+
+
+}
+.cont hr{
+    background-color: #8EB672;
+    width: 15%;
+}
+
+/*##########################PORTFOLIO##########################*/
+.port{
+    margin-top: 130px !important;
+    margin-bottom: 40px;
+
+}
+.portfolio-caption{
+position: absolute;
+top: 70%;
+left: 5%;
+color: white;
+}
+
+.portfolio-caption h6{
+    font-weight: bold;
+
+}
+.project{
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+/*##########################PORTFOLIO##########################*/
+.service{
+    background-image: url('/images/bg_2.jpg');
+    background-size: cover;
+    margin-top: 100px;
+    height: 500px;
+}
+.service span{
+    color: #0F101C;
+    font-weight: bolder;
+    font-size: 24px;
+
+}
+.service h1{
+    color:#8EB672 ;
+    font-size: 45px;
+    font-weight: bold;
+}
+.serve{
+    margin-top: 160px;
+}
+/*##########################PORTFOLIO##########################*/
+.architecture{
+    margin-top: 100px;
+}
+.car{
+    color:#8EB672 ;
+    font-size: 18px;
+}
