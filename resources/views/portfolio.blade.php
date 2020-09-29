@@ -1,5 +1,5 @@
 @extends('layouts.spacedime')
-@section(' title','Portfolio')
+@section('title','Portfolio')
 @section('content')
 <section class="port container">
     <div class=row class="m-5 position-relative">

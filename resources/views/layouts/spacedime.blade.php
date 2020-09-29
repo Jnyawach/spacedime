@@ -23,11 +23,11 @@
   </head>
   <body>
     <main>
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg  ftco_navbar  ftco-navbar-light" id="ftco-navbar" >
 	    <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="{{asset('images/logo-01.png')}}" class="img-fluid" style="height: 70px"></a>
+        <a class="navbar-brand" href="/"><img src="{{asset('images/logo-01.png')}}" class="img-fluid" style="height: 60px"></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	        <span class="oi oi-menu"></span> <i class="fa fa-bars" aria-hidden="true" style="color: #96bb7c; font-size:22px;"></i>
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
@@ -55,13 +55,7 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Spacedime</h2>
-            <p>Far far away, behind the word mountains, far from the countries.</p>
-            <ul class="ftco-footer-social list-unstyled mt-5">
-              <li class="ftco-animate"><a href="#" class="text-light"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-            </ul>
+          <img src="{{asset('images/logo-01.png')}}" class="img-fluid bg-light rounded p-2">
           </div>
         </div>
         <div class="col-md">
