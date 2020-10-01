@@ -56,6 +56,10 @@
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
           <img src="{{asset('images/logo-01.png')}}" class="img-fluid bg-light rounded p-2">
+          <h2 class="mt-3">Mission</h2>
+          <p>To deliver high qualityservices at revolutionary price</p>
+          <h2 class="mt-3">Vision</h2>
+          <p>To visualize the change you want to see</p>
           </div>
         </div>
         <div class="col-md">
