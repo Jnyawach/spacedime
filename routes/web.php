@@ -30,4 +30,9 @@ Route::get('survey',['as'=>'survey', 'uses'=>'PagesController@survey']);
 Route::get('planning',['as'=>'planning', 'uses'=>'PagesController@planning']);
 Route::get('environment',['as'=>'environment', 'uses'=>'PagesController@environment']);
 
+Route::group([], function () {
+    Route::resource('/admin', 'AdminController');
+    Route::resource('admin/homepage/portfolio', 'AdminPortfolioController');
+});
+
 

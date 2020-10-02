@@ -50,7 +50,7 @@
                             <div class="icon">
                                 <span class="fa fa-phone"></span>
                             </div>
-                            <p><span>Phone:</span> <a href="tel://1234567920">+254 799 2865</a></p>
+                            <p><span>Phone:</span> <a href="tel://1234567920">+254 707 992 865</a></p>
                         </div>
                         <div class="col-md-4 text-center py-4">
                             <div class="icon">
