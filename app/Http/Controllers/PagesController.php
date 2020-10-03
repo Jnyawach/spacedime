@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Portfolio;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -16,11 +17,15 @@ class PagesController extends Controller
     }
 
     public  function portfolio(){
-        return view('portfolio');
+        $projects=Portfolio::all();
+        return view('portfolio', compact('projects'));
     }
 
-    public  function project(){
-        return view('project');
+    public  function project($slug){
+        $project=Portfolio::where('slug',$slug)->first();
+        $projects=Portfolio::latest()->take(4)->get();
+
+        return view('project',compact('project','projects'));
     }
 
     public  function services(){

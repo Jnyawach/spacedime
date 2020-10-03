@@ -29,6 +29,7 @@
               <div class="media-body py-md-4">
                 <h3>Architectural Designs</h3>
                 <p>Commercial Buildings,Residential buildings</p>
+                <a href="{{route('architecture')}}" title="Architecural designs" class="btn btn-outline-light mb-5 p-2 mt-3" style="border-radius:0px; margin: 0px;">See More</a>
               </div>
             </div>
           </div>
@@ -38,6 +39,7 @@
               <div class="media-body py-md-4">
                 <h3>Physical Planning</h3>
                 <p>Land use master plans, Action area plans,Change of Use</p>
+                <a href="{{route('planning')}}" title="Physical Planning" class="btn btn-outline-light mb-5 p-2 mt-3" style="border-radius:0px; margin: 0px;">See More</a>
               </div>
             </div>
           </div>
@@ -45,8 +47,9 @@
             <div class="media block-6 services services-bg services-lighten d-block text-center px-4 py-5">
             <img src="{{asset('images/icons-03.png')}}" alt="Environmental planning" class="img-fluid" style="height:50px">
               <div class="media-body py-md-4">
-                <h3>Environmental Planning</h3>
+                <h3>Environmental Management</h3>
                 <p>Environmental impact asssessment(EIA), Environmental Audit</p>
+                <a href="{{route('environment')}}" title="Environment Management" class="btn btn-outline-light mb-5 p-2 mt-3" style="border-radius:0px; margin: 0px;">See More</a>
               </div>
             </div>
           </div>
@@ -56,6 +59,7 @@
               <div class="media-body py-md-4">
                 <h3>Survey, GIS & Remote Sensing</h3>
                 <p>Digital Topographical Mapping & Cartography,Topo Surveys</p>
+                <a href="{{route('survey')}}" title="Survey,GIS and Remote Sensing" class="btn btn-outline-light mb-5 p-2 mt-3" style="border-radius:0px; margin: 0px;">See More</a>
               </div>
             </div>
           </div>
@@ -75,26 +79,25 @@
 	    						<span class="subheading">Be Part of our Business</span>
 	    						<h3>Request A Quote</h3>
 	    					</div>
-	    					<form action="#" class="request-form ">
+                        <form action="{{action('RequestQuoteController@store')}}" class="request-form " method="POST">
+                                @csrf
 			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="First Name">
+			    					<input type="text" class="form-control" placeholder="First Name" name="first_name" required>
 			    				</div>
 			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="Last Name">
+			    					<input type="text" class="form-control" placeholder="Last Name" name="last_name" required>
 			    				</div>
 		    					<div class="form-group">
 			    					<div class="form-field">
 	          					<div class="select-wrap">
-
-
-	                    </div>
+              </div>
 			              </div>
 			    				</div>
 		    					<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="Phone">
+			    					<input type="text" class="form-control" placeholder="Phone" name="phone" required>
 			    				</div>
 		    					<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+			              <textarea name="message" id="" cols="30" rows="2" class="form-control" placeholder="Message" required></textarea>
 			            </div>
 			            <div class="form-group">
 			              <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
@@ -159,32 +162,7 @@
     	</div>
     </section>
 
-    <section class="ftco-section ftco-portfolio">
-    	<div class="row justify-content-center no-gutters">
-        <div class="col-md-12 heading-section text-center  mb-5">
-        	<span class="subheading">Projects</span>
-          <h2 class="mb-2">Our Latest Projects</h2>
-        </div>
-      </div>
-        <div class="row portfolio">
-            <div class="col-sm-12 col-md-6 col-lg-4 mt-2 ">
-                <img src="{{asset('images/invisible.jpg')}}" style="width:100%" class="img-fluid">
-                <p>CAPTION TITLE OF THE PROJECT</p>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mt-2 ">
-                <img src="{{asset('images/invisible.jpg')}}" style="width:100%" class="img-fluid">
-                <p>CAPTION TITLE OF THE PROJECT</p>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mt-2 ">
-                <img src="{{asset('images/invisible.jpg')}}" style="width:100%" class="img-fluid">
-                <p>CAPTION TITLE OF THE PROJECT</p>
-            </div>
-
-        </div>
-        <div class="text-center">
-        <a href="{{route('portfolio')}}" title="Portfolio" class="btn btn-primary m-4 p-3 " style="border-radius:0px; margin: 0px;">View Complete Portfolio<i class="fa fa-arrow-right ml-3" aria-hidden="true"></i></a>
-        </div>
-    </section>
+    @include('includes.projects')
 <section class="get-in">
     <div class="row p-5">
         <div class="col-12 mx-auto text-center">

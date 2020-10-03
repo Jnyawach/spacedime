@@ -12,23 +12,28 @@
     </section>
 
     <section >
+
         <div class="row  justify-content-center mb-5 bg-light">
                 <div class="col-md-10 mb-md-5">
-                    <form action="#" class="bg-light p-5 contact-form">
+                    @if(Session::has('contact_message'))
+                    <p class="text-success m-5 text-center">{{session('contact_message')}}</p>
+                   @endif
+                <form action="{{action('ContactController@store')}}" class="bg-light p-5 contact-form" method="POST">
+                    @csrf
                         <div class="form-group row">
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" required>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" placeholder="Your Email">
+                                <input type="text" class="form-control" placeholder="Your Email" name="email" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" class="form-control" placeholder="Subject" name="subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -50,7 +55,7 @@
                             <div class="icon">
                                 <span class="fa fa-phone"></span>
                             </div>
-                            <p><span>Phone:</span> <a href="tel://1234567920">+254 707 992 865</a></p>
+                            <p><span>Phone:</span> <a href="tel://07707992865">+254 707 992 865</a></p>
                         </div>
                         <div class="col-md-4 text-center py-4">
                             <div class="icon">

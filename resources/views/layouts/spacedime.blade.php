@@ -23,7 +23,7 @@
   </head>
   <body>
     <main>
-	  <nav class="navbar navbar-expand-lg  ftco_navbar  ftco-navbar-light" id="ftco-navbar" >
+	  <nav class="navbar navbar-expand-lg  fixed-top bg-light shadow-sm" >
 	    <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="{{asset('images/logo-01.png')}}" class="img-fluid" style="height: 60px"></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">

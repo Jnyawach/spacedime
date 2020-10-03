@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PortfolioRequest;
+use App\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminPortfolioController extends Controller
 {
@@ -14,7 +17,8 @@ class AdminPortfolioController extends Controller
     public function index()
     {
         //
-        return view('admin.portfolio.index');
+        $portfolios=Portfolio::all();
+        return view('admin.portfolio.index', compact('portfolios'));
     }
 
     /**
@@ -34,9 +38,26 @@ class AdminPortfolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PortfolioRequest $request)
     {
         //
+        $input=$request->all();
+        if($files=$request->file('path')) {
+            foreach ($files as $file){
+                $name = time() . $file->getClientOriginalName();
+                $file->move('images', $name);
+                $data[]=$name;
+
+            }
+        }
+        $input['path']=json_encode($data);
+
+        $portfolio=Portfolio::create($input);
+        Session::flash('portfolio_message', 'The Project has been successfully Created');
+
+return redirect('admin/homepage/portfolio');
+
+
     }
 
     /**
@@ -59,6 +80,8 @@ class AdminPortfolioController extends Controller
     public function edit($id)
     {
         //
+        $portfolio=Portfolio::findOrFail($id);
+        return view('admin.portfolio.edit',compact('portfolio'));
     }
 
     /**
@@ -71,6 +94,26 @@ class AdminPortfolioController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $find=Portfolio::findOrFail($id);
+        $input= $request->all();
+        if($files=$request->file('path')) {
+            foreach ($files as $file){
+                $name = time() . $file->getClientOriginalName();
+                $file->move('images', $name);
+                $data[]=$name;
+
+            }
+        }
+
+        if(!empty($data)){
+            $input['path']=json_encode($data);
+        }
+
+        $find->update($input);
+
+        Session::flash('portfolio_message', 'The Project has been successfully Updated');
+
+       return redirect('admin/homepage/portfolio');
     }
 
     /**
@@ -82,5 +125,17 @@ class AdminPortfolioController extends Controller
     public function destroy($id)
     {
         //
+
+        $portfolio=Portfolio::findOrFail($id);
+        $photos=json_decode( $portfolio->path);
+        foreach ($photos as $photo){
+            unlink(public_path().'/images/'. $photo);
+        }
+
+        $portfolio->delete();
+        Session::flash('portfolio_message', 'The Project has been successfully Deleted');
+
+        return redirect('admin/homepage/portfolio');
+
     }
 }
