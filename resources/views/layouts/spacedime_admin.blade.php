@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="{{asset('css/admin.css')}}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-
+        <link rel = "icon" href =
+        "{{asset('images/icon-01.png')}}"
+              type = "image/x-icon">
         @yield('styles')
     </head>
     <body class="sb-nav-fixed">

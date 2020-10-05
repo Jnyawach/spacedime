@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel = "icon" href =
+    "{{asset('images/icon-01.png')}}"
+          type = "image/x-icon">
     @yield(' styles')
   </head>
   <body>
