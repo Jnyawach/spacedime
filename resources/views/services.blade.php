@@ -50,4 +50,5 @@
 
     </div>
 </section>
+@include('includes.expertise')
 @endsection

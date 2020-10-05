@@ -55,7 +55,7 @@
 
 </div>
 </section>
-
+@include('includes.expertise')
 
 
 <section class="get-in">
