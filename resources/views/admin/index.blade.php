@@ -63,7 +63,8 @@
                                                 <th>Name</th>
                                                 <th>Phone</th>
                                                 <th>Message</th>
-                                                <th>Status</th>
+                                                <th>status</th>
+                                                <th>Edit</th>
 
                                             </tr>
                                         </thead>
@@ -72,63 +73,120 @@
                                                 <th>Name</th>
                                                 <th>Phone</th>
                                                 <th>Message</th>
-                                                <th>Status</th>
+                                                <th>status</th>
+                                                <th>Edit</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                            @if($quotes->count()>0)
+                                            @foreach($quotes as $quote)
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>+25470332683330</td>
-                                                <td>This message is about...</td>
-                                                <td class="text-info">Reply</td>
+                                            <td>{{$quote->first_name}} {{$quote->last_name}}</td>
+                                                <td>{{$quote->phone}}</td>
+                                                <td>{!! Illuminate\Support\Str::limit($quote->message, 30)!!}</td>
+                                                <td>
+                                                    @if($quote->is_active==1)
+                                                    <p class="text-danger">Unread</p>
+                                                    @else
+                                                    <p class="text-success">read</p>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="dropdown show">
+                                                        <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Action
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                                                       <a class="dropdown-item" href="{{route('quotation.show', $quote->id)}}">View <i class="fa fa-bookmark ml-2" aria-hidden="true"></i></a>
+
+                                                            {!!Form::open(['method'=>'DELETE','class'=>'dropdown-item', 'action'=>['AdminQuoteController@destroy', $quote->id]])!!}
+                                                            <button type="submit" class="btn btn-block">Delete <i class="fa fa-trash-o ml-2" aria-hidden="true"></i> </button>
+
+                                                            {!!Form::close()!!}
+                                                        </div>
+                                                    </div>
+                                                </td>
 
                                             </tr>
+                                            @endforeach
+                                            @endif
                                            </tbody>
                                     </table>
                                 </div>
+                            </div>
+                            <div class="card-footer">
+                                {{$contacts->links()}}
                             </div>
                         </div>
 
-                        <div class="card mb-4">
-                            <div class="card-header">
+                        <div class="card-body mb-4">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>status</th>
+                                            <th>Edit</th>
 
-                                <h6>Contact Table</h6>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>status</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        @if($contacts->count()>0)
+                                        @foreach($contacts as $contact)
+                                        <tr>
+                                        <td>{{$contact->name}} </td>
+                                            <td>{{$contact->email}}</td>
+                                            <td>{{$contact->subject}}</td>
+                                            <td>{!! Illuminate\Support\Str::limit($contact->message, 30)!!}</td>
+                                            <td>
+                                                @if($contact->is_active==1)
+                                                <p class="text-danger">Unread</p>
+                                                @else
+                                                <p class="text-success">read</p>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <div class="dropdown show">
+                                                    <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Action
+                                                    </a>
+
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                                                   <a class="dropdown-item" href="{{route('enquiry.show', $contact->id)}}">View <i class="fa fa-bookmark ml-2" aria-hidden="true"></i></a>
+
+                                                        {!!Form::open(['method'=>'DELETE','class'=>'dropdown-item', 'action'=>['AdminContactController@destroy', $contact->id]])!!}
+                                                        <button type="submit" class="btn btn-block">Delete <i class="fa fa-trash-o ml-2" aria-hidden="true"></i> </button>
+
+                                                        {!!Form::close()!!}
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        @endforeach
+                                        @endif
+                                       </tbody>
+                                </table>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Subject</th>
-                                                <th>Message</th>
-                                                <th>Status</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Subject</th>
-                                                <th>Message</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>+25470332683330</td>
-                                                <td>Design</td>
-                                                <td>This message is about...</td>
-                                                <td class="text-info">Reply</td>
-
-                                            </tr>
-                                           </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="card-footer">
+                            {{$contacts->links()}}
                         </div>
                     </div>
                 </main>

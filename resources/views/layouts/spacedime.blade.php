@@ -33,13 +33,13 @@
 	        <span class="oi oi-menu"></span> <i class="fa fa-bars" aria-hidden="true" style="color: #96bb7c; font-size:22px;"></i>
 	      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
+	      <div class="collapse navbar-collapse">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="{{route('portfolio')}}" class="nav-link">Portfolio</a></li>
-	          <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+	          <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{route('about')}}" class="nav-link">About</a></li>
+            <li class="nav-item {{ (request()->is('services')) ? 'active' : '' }}"><a href="{{route('services')}}" class="nav-link">Services</a></li>
+            <li class="nav-item {{ (request()->is('portfolio')) ? 'active' : '' }}"><a href="{{route('portfolio')}}" class="nav-link">Portfolio</a></li>
+	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -60,7 +60,7 @@
           <div class="ftco-footer-widget mb-4">
           <img src="{{asset('images/logo-01.png')}}" class="img-fluid bg-light rounded p-2">
           <h2 class="mt-3">Mission</h2>
-          <p>To deliver high qualityservices at revolutionary price</p>
+          <p>To deliver high quality services at revolutionary price</p>
           <h2 class="mt-3">Vision</h2>
           <p>To visualize the change you want to see</p>
           </div>

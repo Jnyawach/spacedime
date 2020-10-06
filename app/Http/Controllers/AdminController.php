@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Quote;
+use App\Contact;
 use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -14,7 +17,9 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('admin.index');
+        $quotes=Quote::paginate(10);
+        $contacts=Contact::paginate(10);
+        return view('admin.index', compact('quotes','contacts'));
     }
 
     /**

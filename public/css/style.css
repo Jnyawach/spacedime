@@ -3369,7 +3369,7 @@ input[type="button"].btn-block {
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {
-    color: #6c757d;
+    color: #6c757d !important;
     pointer-events: none;
     cursor: default; }
 
@@ -8152,8 +8152,8 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #96bb7c; }
-  a:hover, a:focus {
+  color: #0F101C; }
+  a:hover, a:focus, .active a{
     text-decoration: none;
     color: #96bb7c;
     outline: none !important; }
