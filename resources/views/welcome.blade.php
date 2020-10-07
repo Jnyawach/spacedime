@@ -110,12 +110,10 @@
 	          <div class="heading-section pr-md-5">
 	            <h2 class="mb-4">Spacedime</h2>
 
-	            <p> Spacedime Designs is a profession architectural design, physical and l
-                    and use planning, Environmental Management and Survey,G.I.S & Remote Sensing firm
-                    based in Meru County ,Kenya. We deliver services from Designs to council permit drawings,
-                    but also computer generated 3D images. As well as servicing our local market with custom design
-                    services. we also offer a searchable
-                    online database of designs available to anyone worldwide.</p>
+	            <p> Spacedime designs is a professional built environment consultancy based in kenya.
+                    We deliver services from designs to council permit drawings, computer generated 3D images as well
+                    as service our local market with custom design services.
+                    We also offer searchable online database of designs availabe to anyone world wide.</p>
 
 	          </div>
 					</div>
