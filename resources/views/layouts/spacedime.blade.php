@@ -29,11 +29,11 @@
 	  <nav class="navbar navbar-expand-lg  fixed-top bg-light shadow-sm" >
 	    <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="{{asset('images/logo-01.png')}}" class="img-fluid" style="height: 60px"></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#space" aria-controls="space" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> <i class="fa fa-bars" aria-hidden="true" style="color: #96bb7c; font-size:22px;"></i>
 	      </button>
 
-	      <div class="collapse navbar-collapse">
+	      <div class="collapse navbar-collapse " id="space">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"><a href="/" class="nav-link">Home</a></li>
             <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{route('about')}}" class="nav-link">About</a></li>
@@ -102,7 +102,7 @@
               <div class="block-23 mb-3">
                 <ul>
                   <li><span class="icon fa fa-map"></span><span class="text">Castella Building Meru</span></li>
-                  <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+254 707 992 865 | +254 101 557 951</span></a></li>
+                  <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+254 707 992 865 | +254 101 357 951</span></a></li>
                   <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">info@spacedime.com</span></a></li>
                 </ul>
               </div>
